@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertThrows
 import org.junit.jupiter.api.Test
 
 class CodeCrackerTest {
@@ -24,6 +25,17 @@ class CodeCrackerTest {
     val actual = cracker.encrypt("ciao")
 
     assertEquals("4t2y", actual)
+    
+  }
+
+  @Test
+  internal fun shouldSizeOfAlphabetAndKeyTheSameForDecrypt() {
+    
+    val exception = assertThrows(java.lang.IllegalArgumentException::class.java) {
+      CodeCracker("ABGFT", "BNM098665")
+    }
+
+    assertEquals("alphabet and key with different size", exception.message)
     
   }
 }

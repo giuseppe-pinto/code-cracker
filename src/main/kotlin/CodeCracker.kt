@@ -6,4 +6,10 @@ class CodeCracker(private val alphabet: String, private val key: String) {
         .joinToString(separator = "")
   }
 
+  fun encrypt(message: String): String {
+    return message
+        .map { key.elementAt(alphabet.toCharArray().indexOf(it)) }
+        .joinToString(separator = "")
+  }
+
 }

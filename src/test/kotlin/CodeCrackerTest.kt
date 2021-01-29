@@ -14,5 +14,16 @@ class CodeCrackerTest {
     assertEquals("ciao", actual)
     
   }
-  
+
+  @Test
+  fun encrypt() {
+
+    val cracker =
+        CodeCracker("abcio", "234ty")
+
+    val actual = cracker.encrypt("ciao")
+
+    assertEquals("4t2y", actual)
+    
+  }
 }
